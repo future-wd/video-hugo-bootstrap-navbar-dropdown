@@ -27,8 +27,8 @@
               <li><hr class="dropdown-divider"></li>
               {{ else }}
               <li>
-                <a class="dropdown-item{{ if $.IsMenuCurrent "main" . }} active" aria-current="page{{ end }}" 
-                  href="{{ .URL }}">
+                <a class="dropdown-item{{ if eq .Params.disabled true }} disabled{{ end }}{{ if $.IsMenuCurrent "main" . }} active" aria-current="page{{ end }}" 
+                  href="{{ if eq .Params.disabled true }}#{{ else }}{{ .URL }}{{ end }}">
                   {{ .Pre }}<span>{{ .Name }}</span>{{ .Post }}
                   </a>
                 </li>
@@ -38,8 +38,8 @@
         </li>
         {{ else }}
         <li class="nav-item">
-          <a class="nav-link{{ if $.IsMenuCurrent "main" . }} active" aria-current="page{{ end }}" 
-          href="{{ .URL }}">
+          <a class="nav-link{{ if eq .Params.disabled true }} disabled{{ end }}{{ if $.IsMenuCurrent "main" . }} active" aria-current="page{{ end }}" 
+          href="{{ if eq .Params.disabled true }}#{{ else }}{{ .URL }}{{ end }}">
             {{ .Pre }}<span>{{ .Name }}</span>{{ .Post }}
           </a>
         </li>
