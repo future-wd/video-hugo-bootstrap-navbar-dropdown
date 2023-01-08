@@ -1,0 +1,8 @@
+baseURL: http://example.org/
+languageCode: en
+title: My New Hugo Site
+
+menu:
+  main:
+  - identifier: products
+    name: Products
