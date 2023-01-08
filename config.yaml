@@ -6,3 +6,7 @@ menu:
   main:
   - identifier: products
     name: Products
+  - parent: products
+    weight: 20
+    params:
+      divider: true
